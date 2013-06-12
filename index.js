@@ -31,7 +31,7 @@ MapTrans.prototype.map = function (source) {
     var p = Array.isArray(itm.target) ? itm.target : [itm.target];
     var n = [];
     p.forEach(function (i) {
-      n.push(self._handlePatch(i, itm, source, self._map));
+      n.push(self._handlePatch(i, itm, source, self._map, result));
     });
 
     try {
@@ -57,17 +57,18 @@ MapTrans.prototype.map = function (source) {
 // * the value
 // * the map
 // * the source object
+// * the current result
 //
 // This function modifies an object in place, no return value.
 //
-MapTrans.prototype._handlePatch = function (o, item, source, map) {
+MapTrans.prototype._handlePatch = function (o, item, source, map, result) {
   var p = this._clone(o);
   if (!p.value) {
     p.value = path.eval(source, item.source)[0];
   }
 
   if (typeof item.transform === 'function') {
-    p.value = item.transform.apply(item, [p.value, map, source]);
+    p.value = item.transform.apply(item, [p.value, map, source, result]);
   }
 
   return p;
