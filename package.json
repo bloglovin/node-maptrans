@@ -1,0 +1,24 @@
+{
+  "name": "map-transform",
+  "version": "0.0.1",
+  "description": "Map one object to another using JSONPath and JSONPatch.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -u tdd -R spec"
+  },
+  "repository": "",
+  "keywords": [
+    "json",
+    "map",
+    "transform",
+    "patch",
+    "path"
+  ],
+  "author": "Simon Ljungberg <simon@bloglovin.com>",
+  "license": "MIT",
+  "dependencies": {
+    "JSONPath": "~0.9.1",
+    "jsonpatch": "~1.0"
+  }
+}
+
