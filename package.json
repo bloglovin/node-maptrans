@@ -1,6 +1,6 @@
 {
   "name": "maptrans",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Map one object to another using JSONPath and JSONPatch.",
   "main": "index.js",
   "scripts": {
