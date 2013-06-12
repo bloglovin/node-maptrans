@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha -u tdd -R spec"
   },
-  "repository": "",
+  "repository": "https://github.com/bloglovin/node-maptrans",
   "keywords": [
     "json",
     "map",
