@@ -68,5 +68,27 @@ suite('Map Transform', function () {
 
     assert.deepEqual(expected, mapped);
   });
+
+  test('Should return same result when applying transformation twice.', function () {
+    var expected = {
+      foo: 'RAB',
+    };
+
+    var map = maptrans([
+      {
+        source: '$.foo',
+        target: { op: 'add', path: '/foo' },
+        transform: function (value) {
+          value = value.split('').reverse().join('').toUpperCase();
+          return value;
+        }
+      }
+    ]);
+
+    var a = map.map(fixture);
+    var b = map.map(fixture);
+
+    assert.deepEqual(a, b);
+  });
 });
 
