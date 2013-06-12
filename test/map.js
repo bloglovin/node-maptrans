@@ -104,6 +104,6 @@ suite('Map Transform', function () {
     ]).map(fixture);
 
     assert.deepEqual(expected, mapped);
-  })
+  });
 });
 
