@@ -38,6 +38,13 @@ object into a new one.
     var mapped = map.map(yousuperobject);
     var another = map.map(anothersuperobject);
 
+A short hand syntax for `add` operations can be used like this:
+
+    {
+      source: '$.foo',
+      target: '/foo'
+    }
+
 ## API
 
 The `maptrans()` function takes an array of mapping definitions. The mapping

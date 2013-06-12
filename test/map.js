@@ -90,5 +90,20 @@ suite('Map Transform', function () {
 
     assert.deepEqual(a, b);
   });
+
+  test('Should work with shorthand add patch.', function () {
+    var expected = {
+      foo: 'bar'
+    };
+
+    var mapped = maptrans([
+      {
+        source: '$.foo',
+        target: '/foo'
+      }
+    ]).map(fixture);
+
+    assert.deepEqual(expected, mapped);
+  })
 });
 

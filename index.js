@@ -62,7 +62,15 @@ MapTrans.prototype.map = function (source) {
 // This function modifies an object in place, no return value.
 //
 MapTrans.prototype._handlePatch = function (o, item, source, map, result) {
+  if (typeof o === 'string') {
+    o = {
+      op: 'add',
+      path: o
+    };
+  }
+
   var p = this._clone(o);
+
   if (!p.value) {
     p.value = path.eval(source, item.source)[0];
   }
